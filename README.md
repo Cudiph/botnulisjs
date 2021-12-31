@@ -1,6 +1,9 @@
 # BotNulisJS
 Telegram bot to help you generate writing on paper
 
+## Public Bot
+- http://t.me/nulisjs_bot
+
 ## Bot usage
 In the bot dm type `/write` then write a text or use
 [write.txt](./sample/write.txt) for testing.

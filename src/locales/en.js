@@ -1,4 +1,5 @@
 const { stripIndents } = require("common-tags");
+const { oneLine } = require("common-tags/lib");
 
 module.exports = {
   colorjs_ask: stripIndents`
@@ -51,7 +52,9 @@ module.exports = {
     Author = {author}
     Project Homepage = <a href="{homepage}">Github</a>
   `,
-  writejs_prompt: 'Send me text to generate image',
+  writejs_prompt: oneLine`Send me text to generate image.
+    For advanced usage see <a href="https://github.com/Cudiph/botnulisjs/tree/main/sample">sample</a>
+  `,
   writejs_wait: 'Please wait while we processing image...',
   unexpectedError: stripIndents`
     Unexpected error: <code>{msg}</code>

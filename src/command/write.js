@@ -3,7 +3,7 @@ const BigBossGenerator = require("../generator/BigBoss");
 const { teleImgCompress } = require("../lib/Util");
 
 bot.command('write', (ctx) => {
-  ctx.reply(ctx.locale['writejs_prompt']);
+  ctx.replyWithHTML(ctx.locale['writejs_prompt'], { disable_web_page_preview: true });
   ctx.userCache.awaitResponse = 'write';
   ctx.toMenu(ctx, true);
 });

@@ -42,10 +42,10 @@ bot.use(async (ctx, next) => {
     const q = await userSettingsModel.findOne({ userID: ctx.from.id });
     bot.userCache.set(ctx.from.id, {
       awaitResponse: '',
-      font: q.font || 'default',
-      paper: q.paper || 'big boss',
-      color: q.color || 'black',
-      langCode: q.langCode || 'en',
+      font: q?.font || 'default',
+      paper: q?.paper || 'big boss',
+      color: q?.color || 'black',
+      langCode: q?.langCode || 'en',
     });
   }
 

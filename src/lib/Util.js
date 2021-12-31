@@ -10,11 +10,11 @@ class Util {
    * @param {String} str string to be scaped
    */
   static escapeMDV2(str) {
-    return str.replaceAll(/(_|\*|\[|\]|\(|\)|~|`|>|#|\+|-|=|\||{|}|\.|!)/g, '\\$1');
+    return str.replace(/(_|\*|\[|\]|\(|\)|~|`|>|#|\+|-|=|\||{|}|\.|!)/g, '\\$1');
   }
 
   static escapeMD(str) {
-    return str.replaceAll(/(_|\*|`|\[)/g, '\\$1');
+    return str.replace(/(_|\*|`|\[)/g, '\\$1');
   }
 
   static async teleImgCompress(buffer) {

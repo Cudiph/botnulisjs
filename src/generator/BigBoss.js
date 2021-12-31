@@ -56,7 +56,7 @@ class BigBossGenerator extends BaseGenerator {
     if (date) ctx.fillText(date[1], ...dateAxes);
     if (header) ctx.fillText(header[1], ...headerAxes);
 
-    return text.replaceAll(/^(No|Date|Header):\s*['"]([\w\s\d-_'"?/\\|!@#$%^&*()=+{};[\]<>,.]+)['"]$/gm, '').trim();
+    return text.replace(/^(No|Date|Header):\s*['"]([\w\s\d-_'"?/\\|!@#$%^&*()=+{};[\]<>,.]+)['"]$/gm, '').trim();
   }
 
   /**
@@ -98,7 +98,7 @@ class BigBossGenerator extends BaseGenerator {
 
     }
 
-    return text.replaceAll(/^\[\w+,\d+\]/gm, '').trim();
+    return text.replace(/^\[\w+,\d+\]/gm, '').trim();
   }
 
   async write(text) {
