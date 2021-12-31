@@ -1,0 +1,26 @@
+{
+  "name": "nulisjs",
+  "private": true,
+  "version": "0.1.0",
+  "description": "bot that can help you write essay without writing",
+  "main": "src/bot.js",
+  "homepage": "https://github.com/Cudiph/botnulisjs#readme",
+  "scripts": {
+    "start": "node ./src/bot.js",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ignore-path .gitignore ."
+  },
+  "author": "Cudiph",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.8.0",
+    "common-tags": "^1.8.2",
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.1.4",
+    "telegraf": "^4.5.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.5.0"
+  }
+}
