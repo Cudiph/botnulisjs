@@ -1,4 +1,5 @@
 const packageJSON = require('../../package.json');
+const sharp = require('sharp');
 
 class Util {
   static version = packageJSON.version;
@@ -14,6 +15,14 @@ class Util {
 
   static escapeMD(str) {
     return str.replaceAll(/(_|\*|`|\[)/g, '\\$1');
+  }
+
+  static async teleImgCompress(buffer) {
+    const compressed = sharp(buffer)
+      .resize(1280, 960)
+      .jpeg({ quality: 70 })
+      .toBuffer();
+    return compressed;
   }
 }
 

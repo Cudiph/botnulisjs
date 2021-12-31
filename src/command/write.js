@@ -1,5 +1,6 @@
 const { bot } = require("../bot");
 const BigBossGenerator = require("../generator/BigBoss");
+const { teleImgCompress } = require("../lib/Util");
 
 bot.command('write', (ctx) => {
   ctx.reply(ctx.locale['writejs_prompt']);
@@ -25,7 +26,8 @@ bot.on('text', async (ctx, next) => {
     await Generator.write(ctx.message.text);
     // Generator.write(ctx.message.text, 130, 150);
     for (const buff of Generator.buffers) {
-      await ctx.replyWithPhoto({ source: buff });
+      const compressed = await teleImgCompress(buff);
+      await ctx.replyWithPhoto({ source: compressed });
     }
   } catch (e) {
     logger.error(e.stack);
