@@ -17,7 +17,7 @@ bot.command('font', ctx => {
 });
 
 const inline_keyboard = [];
-const fontList = ['default', 'ugly1', 'ugly2'];
+const fontList = ['default', 'ugly1', 'ugly2', 'ugly3', 'curly', 'neat1', 'neat2'];
 let counter = 0;
 for (let i = 0; i < fontList.length; i++) {
   const font = fontList[i];

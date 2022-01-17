@@ -10,7 +10,19 @@ const fontConfig = {
   },
   ugly2: {
     fontSize: 32,
-  }
+  },
+  ugly3: {
+    fontSize: 28,
+  },
+  curly: {
+    fontSize: 40,
+  },
+  neat1: {
+    fontSize: 28,
+  },
+  neat2: {
+    fontSize: 28,
+  },
 };
 
 class BigBossGenerator extends BaseGenerator {
@@ -20,9 +32,9 @@ class BigBossGenerator extends BaseGenerator {
    */
   constructor(userCache) {
     super(1440, 1080);
-    this.fontFamily = userCache.font || 'default';
+    this.fontFamily = userCache.font in fontConfig ? userCache.font : 'default';
     this.color = userCache.color || 'black';
-    this.fontSize = fontConfig[userCache.font].fontSize || 28;
+    this.fontSize = fontConfig[this.fontFamily].fontSize || 28;
   }
 
   /**

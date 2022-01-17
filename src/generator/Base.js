@@ -3,6 +3,11 @@ const staticFolder = `${__dirname}/../static`;
 Canvas.registerFont(`${staticFolder}/My Ugly Handwriting.otf`, { style: 'regular', family: 'default' });
 Canvas.registerFont(`${staticFolder}/Childlike-Regular.otf`, { family: 'ugly1' });
 Canvas.registerFont(`${staticFolder}/Kid Playon.ttf`, { family: 'ugly2' });
+Canvas.registerFont(`${staticFolder}/irrep.ttf`, { family: 'ugly3' });
+Canvas.registerFont(`${staticFolder}/deepali.otf`, { family: 'curly' });
+Canvas.registerFont(`${staticFolder}/qetonyflores.ttf`, { family: 'neat1' });
+Canvas.registerFont(`${staticFolder}/tomhand.ttf`, { family: 'neat2' });
+
 
 // abstract class
 class BaseGenerator {
