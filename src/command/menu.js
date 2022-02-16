@@ -61,12 +61,12 @@ for (let i = 0; i < inline_keyboard.length - 1; i++) {
   for (const j of inline_keyboard[i]) {
     bot.action(j.callback_data, (ctx) => {
       ctx.from_menu = true;
-      ctx.deleteMessage();
+      ctx.deleteMessage().catch(e => e);
       bot.cmdFn.get(j.callback_data.replace(suffix, ''))(ctx);
     });
   }
 }
 
 bot.action('close_menu', (ctx) => {
-  ctx.deleteMessage();
+  ctx.deleteMessage().catch(e => e);
 });

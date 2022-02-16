@@ -47,7 +47,7 @@ for (let i = 0; i < paperList.length; i++) {
     } catch (e) {
       ctx.replyWithHTML(ctx.locale['unexpectedError'].formatUnicorn({ msg: e.message }));
     }
-    ctx.deleteMessage();
+    ctx.deleteMessage().catch(e => e);
 
     ctx.toMenu(ctx);
   });
