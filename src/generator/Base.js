@@ -54,7 +54,7 @@ class BaseGenerator {
    */
   toRowText(text, maxTextWidth) {
     let textPointer = 0;
-    let charLen = 50;
+    let charLen = 40;
     const strList = [];
     let enough = false;
 
@@ -66,7 +66,7 @@ class BaseGenerator {
       const measurement = ctx.measureText(subText);
       if (measurement.width < maxTextWidth && textPointer + charLen <= text.length && !enough) {
         const nextSpace = text.indexOf(' ', textPointer + charLen + 1);
-        const relativeToCharLen = nextSpace - textPointer - charLen;
+        const relativeToCharLen = nextSpace - textPointer - charLen + 1; // add 1 so the space is in the end of text instead of start
         if (nextSpace === -1) {
           charLen += 2;
           continue;
@@ -79,7 +79,7 @@ class BaseGenerator {
       }
       strList.push(subText);
       textPointer += charLen;
-      charLen = 50;
+      charLen = 40;
       enough = false;
     }
     const splittedNewLine = [];
