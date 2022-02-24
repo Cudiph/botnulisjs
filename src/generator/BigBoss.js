@@ -68,7 +68,7 @@ class BigBossGenerator extends BaseGenerator {
     if (date) ctx.fillText(date[1], ...dateAxes);
     if (header) ctx.fillText(header[1], ...headerAxes);
 
-    return text.replace(/^(No|Date|Header):\s*['"]([\w\s\d-_'"?/\\|!@#$%^&*()=+{};[\]<>,.]+)['"]$/gm, '').trim();
+    return text.replace(/^(No|Date|Header):\s*['"]([\w\s\d-_'"?/\\|!@#$%^&*()=+{};[\]<>,.]+)['"]$\n/gm, '');
   }
 
   /**
@@ -93,8 +93,9 @@ class BigBossGenerator extends BaseGenerator {
     const rowSize = 31;
 
     ctx.font = `${this.fontSize - 4}px ${this.fontFamily}`;
+    const boxSyntaxRegex = /^\[(\w+),(\d+)\]/gm;
 
-    const matchedLines = [...text.matchAll(/^\[(\w+),(\d+)\]/gm)];
+    const matchedLines = [...text.matchAll(boxSyntaxRegex)];
     for (let i = 0; i < matchedLines.length; i++) {
       const elem = matchedLines[i];
       const strToWrite = elem[1];
@@ -110,7 +111,7 @@ class BigBossGenerator extends BaseGenerator {
 
     }
 
-    return text.replace(/^\[\w+,\d+\]/gm, '').trim();
+    return text.replace(boxSyntaxRegex, '');
   }
 
   async write(text) {
