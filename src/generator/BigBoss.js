@@ -93,7 +93,7 @@ class BigBossGenerator extends BaseGenerator {
     const rowSize = 31;
 
     ctx.font = `${this.fontSize - 4}px ${this.fontFamily}`;
-    const boxSyntaxRegex = /^\[(\w+),(\d+)\]/gm;
+    const boxSyntaxRegex = /^\[([\w\s]+),(\d+)\]/gm;
 
     const matchedLines = [...text.matchAll(boxSyntaxRegex)];
     for (let i = 0; i < matchedLines.length; i++) {
